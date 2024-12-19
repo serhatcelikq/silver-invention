@@ -1,0 +1,85 @@
+/* Genel stil */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+.header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.header .logo img {
+    width: 150px;
+    height: auto;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.navbar a.active {
+    background-color: #f44336;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+/* Anasayfa section */
+.anasayfa {
+    /* background: url('images/your-image.jpg') no-repeat center center/cover; */
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.anasayfa .content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.anasayfa h3 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.anasayfa p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.anasayfa .btn {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none; /* Butonun kenarlıklarını kaldır */
+    cursor: pointer; /* Tıklanabilir göster */
+    display: inline-block; /* Butonun düzgün görünmesi için */
+    text-align: center; /* Yazının ortalanması */
+}
+
+.anasayfa .btn:hover {
+    background-color: #d32f2f; /* Hover efekti */
+}

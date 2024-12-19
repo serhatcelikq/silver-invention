@@ -1,0 +1,187 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo img {
+    width: 120px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.activebutton {
+    color: #ffc107;
+}
+
+/* Anasayfa */
+.anasayfa {
+    /* background: url('assets/images/background.jpg') no-repeat center center/cover; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Sola yasla */
+    color: white;
+    padding: 20px 40px; /* Sola doğru biraz boşluk bırak */
+    text-align: left;
+}
+
+.anasayfa h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.anasayfa p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.anasayfa a {
+    background-color: #ffc107;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.anasayfa a:hover {
+    background-color: #ffcd39;
+}
+
+/* Restaurantlar */
+.restaurantlar {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: left; /* İçeriği sola yasla */
+}
+
+.restaurantlar .heading {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007bff;
+    text-align: left; /* Başlık sola yasla */
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Kartları sola yasla */
+}
+
+.box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.box h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 15px 0;
+}
+
+.box .ücret {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.box .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.box .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .anasayfa h3 {
+        font-size: 2rem;
+    }
+
+    .anasayfa p {
+        font-size: 1rem;
+    }
+
+    .box-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

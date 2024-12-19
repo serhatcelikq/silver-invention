@@ -1,0 +1,24 @@
+<div class="signin-form-container">
+  <h1>Giriş Yap</h1>
+  <form (ngSubmit)="onLogin()">
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="mail"
+      placeholder="Eposta"
+      class="txt"
+      required
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Şifre"
+      class="txt"
+      required
+    />
+    <button type="submit" class="signin-btn">Giriş Yap</button>
+    <a routerLink="/register">Hesabınız yok mu? Kaydolun.</a>
+  </form>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

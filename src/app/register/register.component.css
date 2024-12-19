@@ -1,0 +1,120 @@
+/* General Body Styling */
+body {
+    display: flex;
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    min-height: 100vh; /* Ensures it takes full viewport height */
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    height: 100%; /* Ensure body takes full height */
+    position: relative;
+  }
+  
+  /* Container for Register Form */
+  .register-form-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Absolute positioning to center the container */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the container both vertically and horizontally */
+  }
+  
+  /* Title Styling */
+  .register-form-container h1 {
+    color: #007bff;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Form Input Fields */
+  .txt {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  /* Focus Effect on Inputs */
+  .txt:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Submit Button Styling */
+  .signup-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Button Hover Effect */
+  .signup-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  
+  /* Link Styling */
+  .register-form-container a {
+    display: block;
+    margin-top: 25px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Link Hover Effect */
+  .register-form-container a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .register-form-container {
+      padding: 25px;
+      margin: 15px;
+    }
+  
+    .register-form-container h1 {
+      font-size: 2rem;
+    }
+  
+    .txt {
+      font-size: 14px;
+      padding: 12px;
+    }
+  
+    .signup-btn {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .register-form-container a {
+      font-size: 13px;
+    }
+  }
+  
