@@ -1,13 +1,17 @@
 <header class="header">
-    <a href="#" class="logo">
+    <a routerLink="/" class="logo">
       <img src="" alt="Yemek23 Logo">
     </a>
     <nav class="navbar">
-      <a [routerLink]="['/index']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Anasayfa</a>
-      <a [routerLink]="['/restaurant']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Restoranlar</a>
-      <a [routerLink]="['/favorite']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Favori Restoranlarım</a>
-      <a [routerLink]="['/signin']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Giriş Yap</a>
-      <a [routerLink]="['/register']" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact: true}">Kaydol</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Anasayfa</a>
+      <a routerLink="/restaurant" routerLinkActive="active">Restoranlar</a>
+      <a routerLink="/favorite" routerLinkActive="active">Favori Restoranlarım</a>
+      <a routerLink="/signin" routerLinkActive="active">Giriş Yap</a>
+      <a routerLink="/register" routerLinkActive="active">Kaydol</a>
+      <a routerLink="/balance" routerLinkActive="active" class="balance-link">
+        <i class="fas fa-wallet"></i>
+        {{currentBalance}} ₺
+      </a>
     </nav>
     <div class="buttons">
       <button id="search-btn" (click)="onSearch()">

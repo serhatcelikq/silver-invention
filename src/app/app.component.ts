@@ -1,21 +1,29 @@
-import { Component } from '@angular/core';
-import { Router, RouterOutlet, RouterModule } from '@angular/router';
-import { IndexComponent } from "./index/index.component";
-import { SigninComponent } from "./signin/signin.component";
-import { RegisterComponent } from "./register/register.component";
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { BalanceService } from './services/balance.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, RouterModule, IndexComponent, SigninComponent, RegisterComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CommonModule, RouterModule]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'yemek23';
-  posts: any; // Consider defining a proper interface/type instead of using 'any'
+  currentBalance: number = 0;
 
-  onSearch(): void {
-    console.log('Search clicked'); // You can implement the actual search logic here
+  constructor(private balanceService: BalanceService) {}
+
+  ngOnInit() {
+    // Bakiye değişikliklerini dinle
+    this.balanceService.balance$.subscribe(balance => {
+      this.currentBalance = balance;
+    });
+  }
+
+  onSearch() {
+    // Arama işlevi
   }
 }

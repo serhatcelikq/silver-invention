@@ -6,9 +6,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1a1c20 0%, #0f1012 100%);
+    color: #fff;
+    min-height: 100vh;
 }
 
 /* Header styling */
@@ -42,44 +43,130 @@ body {
 
 /* Anasayfa section */
 .anasayfa {
-    /* background: url('images/your-image.jpg') no-repeat center center/cover; */
     height: 100vh;
-    color: white;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(102, 126, 234, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    padding: 20px;
 }
 
-.anasayfa .content {
-    max-width: 600px;
-    margin: 0 auto;
+.anasayfa::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/food-bg.jpg') no-repeat center center/cover;
+    opacity: 0.15;
+    z-index: -1;
+    top: 0;
+    left: 0;
 }
 
-.anasayfa h3 {
-    font-size: 3em;
-    margin-bottom: 20px;
+.content {
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease-out;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
-.anasayfa p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+.content:hover {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+    transform: translateY(-5px);
 }
 
-.anasayfa .btn {
-    background-color: #f44336;
+.content h3 {
+    font-size: 3.5em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 12px 24px;
+    padding: 1rem 2.5rem;
     text-decoration: none;
     font-size: 1.2em;
-    border-radius: 5px;
-    border: none; /* Butonun kenarlıklarını kaldır */
-    cursor: pointer; /* Tıklanabilir göster */
-    display: inline-block; /* Butonun düzgün görünmesi için */
-    text-align: center; /* Yazının ortalanması */
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.anasayfa .btn:hover {
-    background-color: #d32f2f; /* Hover efekti */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content h3 {
+        font-size: 2.5em;
+    }
+
+    .content p {
+        font-size: 1.2em;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.1em;
+    }
 }

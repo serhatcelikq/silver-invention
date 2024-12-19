@@ -28,7 +28,7 @@
             ],
             "styles": [
               "src/styles.css",
-              // ... diğer stil dosyaları
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": []
           },

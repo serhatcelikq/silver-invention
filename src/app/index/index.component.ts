@@ -1,28 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-index',
-  standalone: true,
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']  // styleUrl -> styleUrls
+  styleUrls: ['./index.component.css'],
+  standalone: true,
+  imports: [RouterModule, CommonModule]
 })
-export class IndexComponent {
-  isSearchedFormActive: boolean = false;
+export class IndexComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  // Formu toggle etme işlemi
-  toggleSearchForm(event: MouseEvent): void {  // toggleSearchFrom -> toggleSearchForm
-    this.isSearchedFormActive = !this.isSearchedFormActive;
-    event.stopPropagation();
+  ngOnInit() {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      disable: 'mobile'
+    });
   }
 
-  // Arama formunu kapatma
-  closedSearchForm(): void {
-    this.isSearchedFormActive = false;
-  }
-
-  // Favorilere ekleme işlevi
-  addToFavorites(_t34: any) {
-    // Favorilere ekleme işlemi burada yapılacak
-    console.log('Favorilere eklendi:', _t34);
+  navigateToRestaurants() {
+    this.router.navigate(['/restaurant']);
   }
 }
