@@ -15,6 +15,6 @@ import { IndexComponent } from './index/index.component';
     // ... diğer modüller
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { } 
+export class AppModule {}

@@ -1,55 +1,28 @@
-<div class="register-form-container">
-  <form (ngSubmit)="onRegister()" #registerForm="ngForm">
-    <h1>Kayıt Ol</h1>
-    
-    <input 
-      type="text" 
-      [(ngModel)]="userName" 
-      name="userName" 
-      placeholder="İsim Soyisim" 
-      class="txt" 
-      #name="ngModel"
-      required>
-    <div *ngIf="name.invalid && name.touched" class="error-msg">
-      İsim Soyisim alanı zorunludur.
-    </div>
-
-    <input 
-      type="email" 
-      [(ngModel)]="userEmail" 
-      name="userEmail" 
-      placeholder="E-posta" 
-      class="txt" 
-      #email="ngModel"
-      required
-      email>
-    <div *ngIf="email.invalid && email.touched" class="error-msg">
-      Geçerli bir e-posta adresi giriniz.
-    </div>
-
-    <input 
-      type="password" 
-      [(ngModel)]="userPassword" 
-      name="userPassword" 
-      placeholder="Şifre" 
-      class="txt" 
-      #password="ngModel"
-      required 
-      minlength="6">
-    <div *ngIf="password.invalid && password.touched" class="error-msg">
-      Şifre en az 6 karakter olmalıdır.
-    </div>
-
-    <div class="error-msg" *ngIf="registerForm.submitted">
-      Bu email adresi zaten kullanımda!
-    </div>
-
-    <button 
-      type="submit" 
-      class="signup-btn" 
-      [disabled]="!registerForm.valid">
-      Hesap Oluştur
-    </button>
-    <a routerLink="/signin">Zaten bir hesabınız var mı? Giriş yapın.</a>
-  </form>
-</div>
+<h1>Kayıt Ol</h1>
+<form (ngSubmit)="onRegister()">
+  <input
+    type="text"
+    [(ngModel)]="name"
+    name="name"
+    placeholder="Ad Soyad"
+    class="txt"
+    required
+  />
+  <input
+    type="email"
+    [(ngModel)]="email"
+    name="email"
+    placeholder="Email"
+    class="txt"
+  />
+  <input
+    type="password"
+    [(ngModel)]="password"
+    name="password"
+    placeholder="Şifre"
+    class="txt"
+    required
+  />
+  <button type="submit" class="signup-btn">Hesap Oluştur</button>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</form>

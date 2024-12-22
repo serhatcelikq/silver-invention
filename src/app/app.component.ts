@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AuthService } from './services/auth.service';
 import { BalanceService } from './services/balance.service';
 
 @Component({
@@ -8,22 +10,26 @@ import { BalanceService } from './services/balance.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule]
+  imports: [RouterOutlet, CommonModule, RouterModule],
 })
-export class AppComponent implements OnInit {
-  title = 'yemek23';
-  currentBalance: number = 0;
+export class AppComponent {
+  isLoggedIn = false;
+  currentBalance = 0;
 
-  constructor(private balanceService: BalanceService) {}
+  constructor(
+    private authService: AuthService,
+    private balanceService: BalanceService
+  ) {
+    this.authService.isLoggedIn$.subscribe(
+      (status) => (this.isLoggedIn = status)
+    );
 
-  ngOnInit() {
-    // Bakiye değişikliklerini dinle
-    this.balanceService.balance$.subscribe(balance => {
-      this.currentBalance = balance;
-    });
+    this.balanceService.balance$.subscribe(
+      (balance) => (this.currentBalance = balance)
+    );
   }
 
-  onSearch() {
-    // Arama işlevi
+  onLogout() {
+    this.authService.logout();
   }
 }

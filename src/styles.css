@@ -24,7 +24,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Animasyonlar */
+/* Animations */
 .fade-in {
   animation: fadeIn 0.5s ease-in;
 }
@@ -67,7 +67,7 @@ body {
   }
 }
 
-/* Hover Efektleri */
+/* Hover Effects */
 .hover-scale {
   transition: transform 0.3s ease;
 }
@@ -76,13 +76,13 @@ body {
   transform: scale(1.05);
 }
 
-/* Gelişmiş Kartlar */
+/* Cards */
 .glass-card {
   @apply bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Gelişmiş Butonlar */
+/* Buttons */
 .btn {
   @apply px-4 py-2 rounded-lg transition-all duration-200 relative overflow-hidden;
 }
@@ -102,7 +102,7 @@ body {
   @apply w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin;
 }
 
-/* Navbar Animation */
+/* Navbar */
 .nav-link {
   position: relative;
   @apply px-4 py-2;
@@ -123,7 +123,7 @@ body {
   width: 100%;
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -141,12 +141,14 @@ body {
   background: #2563eb;
 }
 
+/* Layout */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* Components */
 .card {
   @apply bg-white rounded-lg shadow-md p-6;
 }

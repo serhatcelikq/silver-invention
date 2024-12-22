@@ -1,23 +1,30 @@
-<header class="header">
+<div class="app-container">
+  <header class="header">
     <a routerLink="/" class="logo">
-      <img src="" alt="Yemek23 Logo">
-    </a>
-    <nav class="navbar">
+      <img src="assets/images/logo.png" alt="Yemek23 Logo">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Anasayfa</a>
       <a routerLink="/restaurant" routerLinkActive="active">Restoranlar</a>
       <a routerLink="/favorite" routerLinkActive="active">Favori Restoranlarım</a>
-      <a routerLink="/signin" routerLinkActive="active">Giriş Yap</a>
-      <a routerLink="/register" routerLinkActive="active">Kaydol</a>
-      <a routerLink="/balance" routerLinkActive="active" class="balance-link">
-        <i class="fas fa-wallet"></i>
-        {{currentBalance}} ₺
-      </a>
-    </nav>
-    <div class="buttons">
-      <button id="search-btn" (click)="onSearch()">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
-  </header>
-  
-  <router-outlet></router-outlet>
+      
+      <!-- Login olmamışsa bu linkler görünür -->
+      <ng-container *ngIf="!isLoggedIn">
+        <a routerLink="/signin" routerLinkActive="active">Giriş Yap</a>
+        <a routerLink="/register" routerLinkActive="active">Kaydol</a>
+      </ng-container>
+
+      <!-- Login olmuşsa bu linkler görünür -->
+      <ng-container *ngIf="isLoggedIn">
+        <a routerLink="/balance" routerLinkActive="active" class="balance-link">
+          <i class="fas fa-wallet"></i>
+          {{currentBalance}} ₺
+        </a>
+        <a href="javascript:void(0)" (click)="onLogout()" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i>
+          Çıkış Yap
+        </a>
+      </ng-container>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
